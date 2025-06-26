@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -25,20 +25,192 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  .animate-slideInDown {
+    animation: slideInDown 1s ease forwards;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 1s ease forwards;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 1s ease forwards;
+  }
+
+  .animate-zoomIn {
+    animation: zoomIn 1s ease forwards;
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease both;
+  }
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 .backgroundheadimg{
-  /* width: 100%;
-    min-height: 70vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 120px 0px; */
   background-image: url('https://themewagon.github.io/Bootslander/assets/img/hero-bg-2.jpg');
 }
 
-/* .backgroundheadimg::before {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    background:color-mix(in srgb, #08005e, transparent 10%);
-    inset: 0px;
-} */
+.hero-header {
+  /* background-color: #1447e6 !important; */
+  background-color: #7939e8 !important;
+  background: url(/blob-top-left.png), 
+    url(/blob-top-right.png),
+    url(/blob-bottom-left.png), 
+    url(/blob-bottom-right.png), 
+    url(/blob-center..png),
+    url(/bg-bottom.png);
+
+    background-position: left 0 top 0, right 0 top 0, left 0 bottom 0, right 0 bottom 0, 50%, bottom;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+    padding: 6rem 2rem;
+}
+
+.service-item:hover
+ {
+    background: #7939e8;
+    margin-top: -15px;
+    padding-bottom: 60px;
+}
+
+.service-item {
+    /* background: #f6f4f9; */
+    overflow: hidden;
+    padding: 45px 30px;
+    position: relative;
+    transition: .5s;
+
+    padding: 40px 30px;
+    box-shadow: #f3dcfb 0px 7px 29px 0px;
+    /* box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.06); */
+    border-radius: 15px;
+    background: #fff;
+    height: 260px;
+    line-height: 85px;
+}
+.bg-primary{
+  background-color: #1447e6 !important;
+}
+.service-item .service-icon {
+    /* margin: 0 auto 20px auto;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f6f4f9;
+    background: url(/feature_icon.png) center center no-repeat; */
+    background-size: contain;
+    transition: .5s;
+
+    position: relative;
+    background: url(/feature_icon.png);
+    width: 148px;
+    height: 139px;
+    line-height: 100px;
+    margin: auto;
+    font-size: 28px;
+    margin-bottom: 14px;
+    color: #5e2ced;
+}
+
+.service-item:hover .service-icon {
+    /* color: #04000b; */
+     width: 148px;
+    height: 139px;
+    line-height: 100px;
+    color: #5e2ced;
+    background: url(/feature_icon.png) center center no-repeat;
+    background-size: contain;
+}
+
+.service-item .service-icon svg{
+  margin-top: 25px;
+}
+
+.serviceTitle{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+    font-weight: 500;
+    color: #1c144e;
+    text-transform: capitalize;
+  }
+  .chooseTitle{
+    font-size: 16px;
+    color: #1c144e;
+    text-transform: capitalize;
+  }
+.service-item:hover .serviceTitle {
+    color: #fff;
+}
+
+.course-item img {
+    background-size: contain;
+    transition: .5s;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #5e2ced;
+}
+
+.course-item:hover img {
+     width: 80px;
+    height: 80px;
+    background-size: contain;
+}
